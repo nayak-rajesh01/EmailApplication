@@ -8,3 +8,13 @@ Mailbox Capacity: 700MB
 Alternate Email: raj@gmail.com
 ======================
 
+===== USER DATA =====
+First Name: john
+Last Name: dee
+Department: Accounting
+Email: john.dee@accounting.company.com
+Password: &kJeU%?3
+Mailbox Capacity: 600MB
+Alternate Email: johndee@gmail.com
+======================
+
