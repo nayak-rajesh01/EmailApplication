@@ -1,0 +1,10 @@
+===== USER DATA =====
+First Name: rajesh
+Last Name: nayak
+Department: Development
+Email: rajesh.nayak@development.company.com
+Password: Ez$LKn#1
+Mailbox Capacity: 700MB
+Alternate Email: raj@gmail.com
+======================
+
