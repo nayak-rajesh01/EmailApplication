@@ -1,42 +1,81 @@
 # 📧 Email Administration System (Java)
 
-A **Java-based Email Administration System** that automatically generates employee email accounts, manages passwords, mailbox capacity, alternate emails, and stores user information in a file.
+A **Java-based Email Administration System** that automatically generates employee email accounts, manages passwords, mailbox capacity, alternate emails, and stores employee information in a file.
 
-This project demonstrates **Core Java concepts**, including:
+This project simulates how **corporate IT departments generate employee email accounts** and manage basic email account settings.
 
-* Object-Oriented Programming (OOP)
-* Exception Handling
-* File Handling
-* Random Password Generation
-* Menu-driven Console Applications
-* Encapsulation
-* Input Validation
+The application is a **menu-driven console program built using Core Java concepts**, focusing on **Object-Oriented Programming and File Handling**.
 
 ---
 
 # 🚀 Features
 
-✔ Employee email generation
-✔ Department selection
+✔ Automatic company email generation
+✔ Department selection system
 ✔ Secure random password generation
 ✔ Change password with validation
-✔ Set mailbox capacity
-✔ Set alternate email
+✔ Mailbox capacity management
+✔ Set alternate email address
 ✔ Store employee data in a file
-✔ Read stored employee data
+✔ Read employee data from stored file
 ✔ Menu-driven console interface
 ✔ Exception handling for robust input processing
 
 ---
 
-# 🛠 Technologies Used
+# 🏗 System Architecture
 
-* **Java**
-* **Core Java Concepts**
-* **File Handling (BufferedReader / BufferedWriter)**
-* **Exception Handling**
-* **Random Class**
-* **Scanner Class**
+The application follows a **simple layered architecture**.
+
+```
++--------------------+
+|        User        |
++---------+----------+
+          |
+          v
++--------------------+
+|    EmailApp.java   |
+|  (Driver / Menu)   |
++---------+----------+
+          |
+          v
++--------------------+
+|     Email.java     |
+|   Business Logic   |
++---------+----------+
+          |
+          v
++--------------------+
+|     File System    |
+|      info.txt      |
++--------------------+
+```
+
+### Architecture Components
+
+**User**
+
+* Interacts with the system via the console.
+
+**EmailApp.java**
+
+* Main driver class
+* Handles menu system and user interaction
+* Calls business logic methods from the Email class.
+
+**Email.java**
+
+* Core business logic of the application
+* Generates email IDs
+* Generates random passwords
+* Handles password updates
+* Manages mailbox capacity
+* Manages alternate emails
+* Handles file storage and retrieval
+
+**File System**
+
+* Stores employee information in `info.txt`.
 
 ---
 
@@ -48,35 +87,48 @@ EmailAdministrationSystem
 └── src
     └── emailapp
         │
-        ├── Email.java       # Main business logic
-        └── EmailApp.java    # Driver class with menu
+        ├── Email.java
+        │     - Business logic
+        │     - Email generation
+        │     - Password management
+        │     - File operations
+        │
+        └── EmailApp.java
+              - Main driver class
+              - Menu-driven interface
+              - User interaction
 ```
 
 ---
 
 # ⚙️ How the System Works
 
-### 1️⃣ User enters employee name
+### 1️⃣ User enters employee details
 
 ```
 Enter First Name: Rajesh
 Enter Last Name: Nayak
 ```
 
+---
+
 ### 2️⃣ System asks for department
 
 ```
 Department Codes:
+
 1 - Sales
 2 - Development
 3 - Accounting
 0 - None
 ```
 
-### 3️⃣ System generates automatically
+---
+
+### 3️⃣ System automatically generates
 
 * Company email
-* Random secure password
+* Secure random password
 
 Example:
 
@@ -91,6 +143,7 @@ Password: A@7h$kL9
 
 ```
 ========= MENU =========
+
 1. Show Information
 2. Change Password
 3. Change Mailbox Capacity
@@ -117,19 +170,18 @@ Example:
 A$7kL@2p
 ```
 
-Users can also **change their password with validation**.
-
-Rules:
+### Password Change Rules
 
 * Minimum **8 characters**
 * Must enter **current password**
-* **3 attempts allowed**
+* Maximum **3 attempts allowed**
+* Account locks after repeated failures
 
 ---
 
 # 💾 File Storage
 
-Employee data can be stored in a text file:
+Employee data is stored in a text file:
 
 ```
 info.txt
@@ -151,32 +203,27 @@ Alternate Email: rajesh@gmail.com
 
 ---
 
-# 📥 How to Run the Project
-
-### Step 1 — Clone Repository
-
-```bash
-git clone https://github.com/your-username/email-administration-system.git
-```
-
----
-
-### Step 2 — Open in IDE
-
-Open in:
-
-* IntelliJ IDEA
-* Eclipse
-* VS Code
-
----
-
-### Step 3 — Run Program
-
-Run:
+# 🔄 Data Flow
 
 ```
-EmailApp.java
+User Input
+     |
+     v
+EmailApp (Menu System)
+     |
+     v
+Email Class
+     |
+     +---- Email Generation
+     |
+     +---- Password Generation
+     |
+     +---- Account Settings
+     |
+     +---- File Storage
+             |
+             v
+          info.txt
 ```
 
 ---
@@ -185,39 +232,87 @@ EmailApp.java
 
 This project demonstrates:
 
-* **Encapsulation**
-* **Constructors**
-* **Method creation**
-* **Exception handling**
-* **Menu driven programs**
-* **File read/write**
-* **Random password generation**
-* **Input validation**
-* **OOP design**
+* Object-Oriented Programming (OOP)
+* Encapsulation
+* Constructors
+* Method creation
+* Exception Handling
+* Menu-driven programming
+* File reading and writing
+* Random password generation
+* Input validation
+* Java String operations
 
 ---
 
-# 🎯 Learning Purpose
+# 🛠 Technologies Used
 
-This project is useful for beginners learning:
+**Language**
 
-* Core Java
-* OOP design
-* File handling
-* Console-based application development
+* Java
+
+**Core Concepts**
+
+* OOP (Encapsulation)
+* Exception Handling
+* File Handling
+
+**Libraries Used**
+
+* Scanner
+* Random
+* BufferedReader
+* BufferedWriter
+* FileReader
+* FileWriter
+
+**Development Tools**
+
+* IntelliJ IDEA / Eclipse / VS Code
+
+---
+
+# 📥 How to Run the Project
+
+### Step 1 — Clone the Repository
+
+```
+git clone https://github.com/your-username/email-administration-system.git
+```
+
+---
+
+### Step 2 — Open in IDE
+
+Open the project in:
+
+* IntelliJ IDEA
+* Eclipse
+* VS Code
+
+---
+
+### Step 3 — Run the Program
+
+Run the main class:
+
+```
+EmailApp.java
+```
 
 ---
 
 # 🔮 Future Improvements
 
-Possible upgrades:
+Possible enhancements include:
 
 * Database integration (MySQL / PostgreSQL)
-* Email validation
-* Password encryption
-* GUI version (JavaFX / Swing)
-* Web version (Spring Boot)
-* Multiple employee management
+* Email validation system
+* Password encryption using hashing
+* GUI version using JavaFX or Swing
+* Web-based version using Spring Boot
+* Multiple employee management system
+* Login authentication system
 
 ---
 
@@ -235,8 +330,6 @@ Possible upgrades:
 
 If you like this project:
 
-⭐ **Star the repository**
-🍴 **Fork it**
-📢 **Share it**
-
----
+⭐ Star the repository
+🍴 Fork the project
+📢 Share it with others
