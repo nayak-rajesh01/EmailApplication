@@ -18,3 +18,23 @@ Mailbox Capacity: 600MB
 Alternate Email: johndee@gmail.com
 ======================
 
+===== USER DATA =====
+First Name: PRANGYA
+Last Name: PATRA
+Department: Development
+Email: prangya.patra@development.company.com
+Password: EdG3oYbP
+Mailbox Capacity: 500MB
+Alternate Email: null
+======================
+
+===== USER DATA =====
+First Name: java
+Last Name: jar
+Department: None
+Email: java.jar@none.company.com
+Password: CuDkTLT6
+Mailbox Capacity: 500MB
+Alternate Email: null
+======================
+
